@@ -8,10 +8,15 @@
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
 	<string>Eastern</string>
-	<key>CFBundleDocumentTypes</key>
-	<array>
-		<dict/>
-	</array>
+     <key>CFBundleDocumentTypes</key>
+     <array>
+         <dict>
+             <key>CFBundleTypeName</key>
+             <string>EasternHR</string>
+             <key>LSHandlerRank</key>
+             <string>Owner</string>
+         </dict>
+     </array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

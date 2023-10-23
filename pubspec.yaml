@@ -92,10 +92,10 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter_icons:
-  android: "ic_launcher"
+  android: true
   ios: true
-  image_path: "assets/images/file.png"
   remove_alpha_ios: true
+  image_path: "assets/images/appicon.svg"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
