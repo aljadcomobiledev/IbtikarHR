@@ -11,7 +11,14 @@ class BuildMainHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
+      decoration: BoxDecoration(
+        color: GeneralColor.appColor,
+        borderRadius: const BorderRadius.only(
+          bottomLeft: Radius.circular(10),
+          bottomRight: Radius.circular(10),
+        ),
+      ),
+      padding: const EdgeInsets.fromLTRB(0, 40, 0, 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -21,7 +28,7 @@ class BuildMainHeader extends StatelessWidget {
             icon: Icon(
               Icons.arrow_back_outlined,
               size: 25,
-              color: GeneralColor.appColor,
+              color: GeneralColor.white,
             ),
           ),
           Text(
@@ -31,7 +38,7 @@ class BuildMainHeader extends StatelessWidget {
             style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: GeneralColor.textColor),
+                color: GeneralColor.white),
           ),
           SizedBox(
             width: 25,

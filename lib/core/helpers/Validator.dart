@@ -1,4 +1,3 @@
-import 'package:eastern/features/auth/screens/sign_up/SignUpImports.dart';
 import 'package:flutter/material.dart';
 
 import '../localization/Localizations.dart';

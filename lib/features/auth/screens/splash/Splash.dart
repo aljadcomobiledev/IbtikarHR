@@ -1,10 +1,8 @@
 part of 'SplashImports.dart';
 
-@RoutePage()
 class Splash extends StatefulWidget {
-  final GlobalKey<NavigatorState> navigatorKey;
 
-  const Splash({required this.navigatorKey});
+  const Splash();
 
   @override
   _SplashState createState() => _SplashState();
@@ -23,26 +21,32 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-
       body: Container(
         decoration: BoxDecoration(
-          color: const Color(0xff7c94b6),
-          image: DecorationImage(
-            fit: BoxFit.fill,
-            colorFilter: ColorFilter.mode(
-                Colors.black.withOpacity(0.8), BlendMode.dstATop),
-            image: const AssetImage(
-              "assets/images/splashbackground2.png",
-            ),
-          ),
+          color: GeneralColor.splashGreyColor,
+
+
+          // image: DecorationImage(
+          //   fit: BoxFit.fill,
+          //   colorFilter: ColorFilter.mode(
+          //       Colors.black.withOpacity(0.8), BlendMode.dstATop),
+          //   image: const AssetImage(
+          //     "assets/images/splashbackground2.png",
+          //   ),
+          // ),
         ),
         child: Stack(
           children: [
-            Image.asset(
-              "assets/images/splashbackground.png",
+            Container(
+              color: GeneralColor.white,
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
-              fit: BoxFit.fill,
+
+              // Image.asset(
+              //   "assets/images/splashbackground.png",
+              //   width: MediaQuery.of(context).size.width,
+              //   height: MediaQuery.of(context).size.height,
+              //   fit: BoxFit.fill,
             ),
             Center(
               child: AnimationContainer(
@@ -54,17 +58,15 @@ class _SplashState extends State<Splash> {
                   tag: "assets/images/splashicon.png",
                   child: Image.asset(
                     "assets/images/splashicon.png",
-                    width: 250,
-                    height: 150,
+                    width: 300,
+                    height: 300,
                   ),
                 ),
-
               ),
             ),
           ],
         ),
       ),
-
     );
   }
 }

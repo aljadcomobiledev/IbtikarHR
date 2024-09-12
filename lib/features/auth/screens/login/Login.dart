@@ -1,6 +1,5 @@
 part of 'LoginImports.dart';
 
-@RoutePage()
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
@@ -9,6 +8,11 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   LoginData loginData = LoginData();
 
+  @override
+  void initState() {
+    loginData.getBranches(context);
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -19,8 +23,8 @@ class _LoginState extends State<Login> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                alignment: Alignment.topRight,
-                padding: const EdgeInsets.only(top: 75, right: 10),
+                  alignment: Alignment.topRight,
+                  padding: const EdgeInsets.only(top: 50, right: 10),
                   child: IconButton(
                     onPressed: () => Navigator.of(context).pop(),
                     icon: Icon(
@@ -28,15 +32,15 @@ class _LoginState extends State<Login> {
                       size: 25,
                       color: GeneralColor.appColor,
                     ),
-                  )
-              ),
+                  )),
+              Image.asset("assets/images/splashicon.png",width: 150,height:150,),
               Padding(
-                padding: const EdgeInsets.only(top: 40),
+                padding: const EdgeInsets.only(top: 20),
                 child: Text(
-                  "الدخول",
+                  "مرحبا بعودتك,تسجيل الدخول",
                   style: TextStyle(
-                    fontSize: 30,
-                    color: GeneralColor.textColor,
+                    fontSize: 25,
+                    color: GeneralColor.appColor,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -44,8 +48,10 @@ class _LoginState extends State<Login> {
               BuildFormLogin(
                 loginData: loginData,
               ),
-              BuildButtonLogin(loginData: loginData)
-            ],
+              BuildButtonLogin(loginData: loginData),
+              SizedBox(
+                height: 10,
+              )],
           ),
         ));
   }

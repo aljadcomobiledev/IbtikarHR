@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
-
-import 'package:eastern/features/auth/model/Response/LoginResponse.dart';
+import 'package:IbtikarHR/features/auth/model/Response/LoginResponse.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedData {

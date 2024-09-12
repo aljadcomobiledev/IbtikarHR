@@ -9,17 +9,17 @@ class BuildButtonLogin extends StatelessWidget {
   Widget build(BuildContext context) {
     // ToastContext().init(context);
 
-    return
-      Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16.0),
-          child: InkWell(
+    return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: InkWell(
             child: Container(
-              height: 50,
+              margin:  const EdgeInsets.only(top: 30),
+              height: 60,
               alignment: Alignment.center,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                   color: GeneralColor.appColor,
-                  borderRadius: BorderRadius.circular(10)),
+                  borderRadius: BorderRadius.circular(15)),
               child: Text(
                 "تسجيل الدخول",
                 textDirection: TextDirection.rtl,
@@ -32,7 +32,7 @@ class BuildButtonLogin extends StatelessWidget {
               ),
             ),
             onTap: () {
-            loginData.login(context);}
-          ));
+              loginData.login(context);
+            }));
   }
 }

@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.intalio.eastern">
+    package="com.ibtikarhr.mobile">
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -13,7 +13,7 @@
     <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION"/>
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
     <application
-        android:label="الموارد البشرية - استيرن كومباني"
+        android:label="IbtikarHR"
         android:name="${applicationName}"
         android:allowBackup="false"
         android:usesCleartextTraffic="true"

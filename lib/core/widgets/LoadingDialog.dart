@@ -10,16 +10,18 @@ class LoadingDialog {
   static showLoadingDialog() {
     EasyLoading.show(
         maskType: EasyLoadingMaskType.black,
-        dismissOnTap: false,
+        dismissOnTap: true,
         indicator: SpinKitCubeGrid(
           size: 40.0,
+          // color: GeneralColor.appColor,
           itemBuilder: (context, index) {
             return Container(
+
               height: 10,
               width: 10,
               margin: const EdgeInsets.all(1),
               decoration: BoxDecoration(
-                  color: GeneralColor.appColor, shape: BoxShape.circle),
+                  color: GeneralColor.appColor, shape: BoxShape.circle,),
             );
           },
         ),
@@ -28,8 +30,10 @@ class LoadingDialog {
 
 
   static showLoadingView({Color? color}) {
-    return const Center(
-      child: CupertinoActivityIndicator()
+    return  Center(
+      child: CupertinoActivityIndicator(
+        color: GeneralColor.appColor,
+      )
     );
   }
 }

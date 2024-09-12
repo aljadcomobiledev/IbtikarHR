@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'HexColor.dart';
 
 class GeneralColor {
-  static Color appColor = HexColor("#B07F1F");
+  static Color appColor = HexColor("#172d50");
   static Color secondColor = HexColor("#F1D876");
   static Color msgColor = HexColor("#fcf8ea");
   static Color white = HexColor("#ffffff");
@@ -16,6 +16,8 @@ class GeneralColor {
   static Color textColor3 = HexColor("#B6B7B7");
   static Color textGreyColor = HexColor("#888888");
   static Color babyBlueBackground = HexColor("#F4F8FB");
+  static Color splashGreyColor = HexColor("#CED6D9");
+
 
 
 

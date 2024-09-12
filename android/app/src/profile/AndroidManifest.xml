@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.intalio.eastern">
+    package="com.ibtikarhr.mobile">
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />

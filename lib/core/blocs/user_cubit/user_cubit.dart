@@ -1,5 +1,5 @@
+import 'package:IbtikarHR/features/auth/model/Response/LoginResponse.dart';
 import 'package:bloc/bloc.dart';
-import 'package:eastern/features/auth/model/Response/LoginResponse.dart';
 import 'package:equatable/equatable.dart';
 
 part 'user_state.dart';

@@ -1,5 +1,5 @@
-import 'package:eastern/core/blocs/auth_cubit/auth_cubit.dart';
-import 'package:eastern/core/blocs/qr_cubit/qr_cubit.dart';
+import 'package:IbtikarHR/core/blocs/auth_cubit/auth_cubit.dart';
+import 'package:IbtikarHR/core/blocs/qr_cubit/qr_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

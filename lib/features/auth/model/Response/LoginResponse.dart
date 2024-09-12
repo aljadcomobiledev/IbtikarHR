@@ -3,137 +3,121 @@ LoginResponse loginResponseFromJson(String str) => LoginResponse.fromJson(json.d
 String loginResponseToJson(LoginResponse data) => json.encode(data.toJson());
 class LoginResponse {
   LoginResponse({
-      Response? response, 
-      String? apiVersion,}){
-    _response = response;
-    _apiVersion = apiVersion;
+      bool? isSuccess, 
+      String? message, 
+      Obj? obj,}){
+    _isSuccess = isSuccess;
+    _message = message;
+    _obj = obj;
 }
 
   LoginResponse.fromJson(dynamic json) {
-    _response = json['response'] != null ? Response.fromJson(json['response']) : null;
-    _apiVersion = json['apiVersion'];
+    _isSuccess = json['IsSuccess'];
+    _message = json['Message'];
+    _obj = json['Obj'] != null ? Obj.fromJson(json['Obj']) : null;
   }
-  Response? _response;
-  String? _apiVersion;
-
-  Response? get response => _response;
-  String? get apiVersion => _apiVersion;
-
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    if (_response != null) {
-      map['response'] = _response?.toJson();
-    }
-    map['apiVersion'] = _apiVersion;
-    return map;
-  }
-
-}
-
-Response responseFromJson(String str) => Response.fromJson(json.decode(str));
-String responseToJson(Response data) => json.encode(data.toJson());
-class Response {
-  Response({
-      Data? data, 
-      num? code, 
-      String? token, 
-      String? message, 
-      String? expiration,}){
-    _data = data;
-    _code = code;
-    _token = token;
-    _message = message;
-    _expiration = expiration;
-}
-
-  Response.fromJson(dynamic json) {
-    _data = json['data'] != null ? Data.fromJson(json['data']) : null;
-    _code = json['code'];
-    _token = json['token'];
-    _message = json['message'];
-    _expiration = json['expiration'];
-  }
-  Data? _data;
-  num? _code;
-  String? _token;
+  bool? _isSuccess;
   String? _message;
-  String? _expiration;
+  Obj? _obj;
 
-  Data? get data => _data;
-  num? get code => _code;
-  String? get token => _token;
+  bool? get isSuccess => _isSuccess;
   String? get message => _message;
-  String? get expiration => _expiration;
+  Obj? get obj => _obj;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
-    if (_data != null) {
-      map['data'] = _data?.toJson();
+    map['IsSuccess'] = _isSuccess;
+    map['Message'] = _message;
+    if (_obj != null) {
+      map['Obj'] = _obj?.toJson();
     }
-    map['code'] = _code;
-    map['token'] = _token;
-    map['message'] = _message;
-    map['expiration'] = _expiration;
     return map;
   }
 
 }
 
-Data dataFromJson(String str) => Data.fromJson(json.decode(str));
-String dataToJson(Data data) => json.encode(data.toJson());
-class Data {
-  Data({
-      String? username, 
-      String? firstName, 
-      String? lastName, 
-      String? jobTitle,
-      String? mobileNumber,
-      String? nationalId, 
-      String? birthDate,}){
-    _username = username;
-    _firstName = firstName;
-    _lastName = lastName;
-    _jobTitle = jobTitle;
-    _mobileNumber = mobileNumber;
-    _nationalId = nationalId;
-    _birthDate = birthDate;
+Obj objFromJson(String str) => Obj.fromJson(json.decode(str));
+String objToJson(Obj data) => json.encode(data.toJson());
+class Obj {
+  Obj({
+      String? userName, 
+      dynamic password, 
+      String? email, 
+      dynamic nameAr, 
+      dynamic phoneNumber, 
+      num? roleId, 
+      String? roleName, 
+      bool? allowToGiveDiscount,
+      bool? allowToChangePrice, 
+      num? employeeId, 
+      String? accessToken,}){
+    _userName = userName;
+    _password = password;
+    _email = email;
+    _nameAr = nameAr;
+    _phoneNumber = phoneNumber;
+    _roleId = roleId;
+    _roleName = roleName;
+    _allowToGiveDiscount = allowToGiveDiscount;
+    _allowToChangePrice = allowToChangePrice;
+    _employeeId = employeeId;
+    _accessToken = accessToken;
 }
 
-  Data.fromJson(dynamic json) {
-    _username = json['username'];
-    _firstName = json['firstName'];
-    _lastName = json['lastName'];
-    _jobTitle = json['jobTitle'];
-    _mobileNumber = json['mobileNumber'];
-    _nationalId = json['nationalId'];
-    _birthDate = json['birthDate'];
+  Obj.fromJson(dynamic json) {
+    _userName = json['UserName'];
+    _password = json['Password'];
+    _email = json['Email'];
+    _nameAr = json['NameAr'];
+    _phoneNumber = json['PhoneNumber'];
+    _roleId = json['RoleId'];
+    _roleName = json['RoleName'];
+    _allowToGiveDiscount = json['AllowToGiveDiscount'];
+    _allowToChangePrice = json['AllowToChangePrice'];
+    _employeeId = json['EmployeeId'];
+    _accessToken = json['AccessToken'];
   }
-  String? _username;
-  String? _firstName;
-  String? _lastName;
-  String? _jobTitle;
-  String? _mobileNumber;
-  String? _nationalId;
-  String? _birthDate;
+  String? _userName;
+  dynamic _password;
+  String? _email;
+  dynamic _nameAr;
+  dynamic _phoneNumber;
+  num? _roleId;
+  String? _roleName;
+  bool? _allowToGiveDiscount;
+  bool? _allowToChangePrice;
+  num? _employeeId;
+  String? _accessToken;
 
-  String? get username => _username;
-  String? get firstName => _firstName;
-  String? get lastName => _lastName;
-  String? get jobTitle => _jobTitle;
-  String? get mobileNumber => _mobileNumber;
-  String? get nationalId => _nationalId;
-  String? get birthDate => _birthDate;
+  String? get userName => _userName;
+  dynamic get password => _password;
+  String? get email => _email;
+  dynamic get nameAr => _nameAr;
+  dynamic get phoneNumber => _phoneNumber;
+  num? get roleId => _roleId;
+  String? get roleName => _roleName;
+  bool? get allowToGiveDiscount => _allowToGiveDiscount;
+  bool? get allowToChangePrice => _allowToChangePrice;
+  num? get employeeId => _employeeId;
+  String? get accessToken => _accessToken;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
-    map['username'] = _username;
-    map['firstName'] = _firstName;
-    map['lastName'] = _lastName;
-    map['jobTitle'] = _jobTitle;
-    map['mobileNumber'] = _mobileNumber;
-    map['nationalId'] = _nationalId;
-    map['birthDate'] = _birthDate;
+    map['UserName'] = _userName;
+    map['Password'] = _password;
+    map['Email'] = _email;
+    map['NameAr'] = _nameAr;
+    map['PhoneNumber'] = _phoneNumber;
+    map['RoleId'] = _roleId;
+    map['RoleName'] = _roleName;
+
+    map['AllowToGiveDiscount'] = _allowToGiveDiscount;
+    map['AllowToChangePrice'] = _allowToChangePrice;
+    map['EmployeeId'] = _employeeId;
+    map['AccessToken'] = _accessToken;
     return map;
   }
 
 }
+
+

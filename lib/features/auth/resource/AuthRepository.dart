@@ -10,5 +10,6 @@ class AuthRepository {
   }
 
   Future<LoginResponse> login(LoginBody loginBody) => _authHttpMethods.login(loginBody);
-  Future<SignUpResponse> signup(SignUpBody signUpBody) => _authHttpMethods.signup(signUpBody);
+
+  Future<List<BranchResponse>?> branches() => _authHttpMethods.getBranches();
 }

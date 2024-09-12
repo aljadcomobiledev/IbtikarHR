@@ -10,11 +10,11 @@ class AuthHttpMethods {
 
     try {
       var header = await Common.requestHeader();
-      var url = Uri.parse(ApisName.appUrl + ApisName.login);
+      // var url = Uri.parse(ApisName.appUrl + ApisName.login);
+      var url = Uri.parse("https://innovationksa.ddns.net:9198/Login");
 
       return http
           .post(
-
         url,
         headers: header,
         body: jsonEncode(loginBody.toJson()),
@@ -41,23 +41,26 @@ class AuthHttpMethods {
     }
   }
 
+  Future<List<BranchResponse>?> getBranches() async {
+    try {
+      var header = await Common.requestHeaderWithToken();
+      var url = Uri.parse("${ApisName.appUrl}${ApisName.branches}");
 
-  Future<SignUpResponse> signup(SignUpBody signUpBody) async {
-    var header = await Common.requestHeader();
-    var url = Uri.parse(ApisName.appUrl + ApisName.signUp);
+      return http.get(url).then((http.Response response) async {
+        final int statusCode = response.statusCode;
+        print("responsebranch : " + response.body);
 
-    return http
-        .post(
-      url,
-      headers: header,
-      body: jsonEncode(signUpBody.toJson()),
-    )
-        .then((http.Response response) async {
-      print("response : " + response.statusCode.toString());
-      print("response : " + response.body);
-      SignUpResponse signUpResponse =
-          SignUpResponse.fromJson(json.decode(response.body));
-      return signUpResponse;
-    });
+        if (statusCode != 200) {
+          throw Exception(statusCode.toString());
+        }
+
+
+        final List body = json.decode(response.body);
+        return List<BranchResponse>.from(
+            body.map((e) => BranchResponse.fromJson(e)));
+      });
+    } catch (ex) {
+      throw Exception(ex.toString());
+    }
   }
 }

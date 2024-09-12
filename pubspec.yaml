@@ -1,4 +1,4 @@
-name: eastern
+name: IbtikarHR
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.19.4 <3.0.0'
+  sdk: '>=2.19.4 <3.3.0'
 
 
 # Dependencies specify other packages that your package needs in order to work.
@@ -43,12 +43,12 @@ dependencies:
   dio: ^5.1.2
   permission_handler: ^10.2.0
   path_provider: ^2.0.15
-  open_file:
+  open_file: ^3.3.1
   shared_preferences: 2.0.4
-  intl: 0.18.0
+  intl: ^0.18.0
   scoped_model: ^2.0.0-nullsafety.0
   overlay_support: ^2.1.0
-#  fluttertoast: ^8.0.7
+  #  fluttertoast: ^8.0.7
   http_client: ^1.4.2
   http: ^0.13.4
   bloc: ^8.0.3
@@ -57,7 +57,7 @@ dependencies:
   flutter_easyloading: ^3.0.5
   flutter_spinkit: ^5.1.0
   equatable:
-  auto_route:
+  auto_route: ^7.8.1
   flutter_staggered_animations:
   external_app_launcher: ^3.1.0
   device_apps: ^2.1.1
@@ -66,23 +66,25 @@ dependencies:
   bot_toast:
   infinite_scroll_pagination:
   flutter_plugin_android_lifecycle: ^2.0.15
-  file_picker: ^5.2.0
+  file_picker:
   flutter_date_pickers: ^0.4.2
-  flutter_rounded_date_picker: ^3.0.4
-  qr_code_scanner: ^0.5.2
-#    git:
-#      url: https://github.com/xeinebiu/qr_code_scanner.git
-#      ref: fix_break_changes_platform
+  qr_code_scanner:
+    git:
+      url: https://github.com/xeinebiu/qr_code_scanner.git
+      ref: fix_break_changes_platform
   flutter_launcher_icons: ^0.13.1
   path: ^1.8.3
   toast: ^0.3.0
-
+  flutter_rounded_date_picker: ^3.0.4
+  jiffy: ^6.2.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   build_runner: ^2.3.0
-  auto_route_generator: ^7.2.0
+  auto_route_generator: ^7.3.1
+  in_date_utils: ^1.2.0+2
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -95,7 +97,7 @@ flutter_icons:
   android: true
   ios: true
   remove_alpha_ios: true
-  image_path: "assets/images/appicon.svg"
+  image_path: "assets/images/splashicon.svg"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
